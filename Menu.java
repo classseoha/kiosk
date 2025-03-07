@@ -1,2 +1,2 @@
-public class Menu {
+public class Menu ttttttttttttttttttttttttttttttttttttttttttt{
 }
