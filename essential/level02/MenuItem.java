@@ -4,24 +4,21 @@ public class MenuItem {
 
     private String product;
     private double price;
-    private String explanation;
+    private String description;
 
-    public MenuItem(String product, double price, String explanation) {
+    public MenuItem(String product, double price, String description) {
         this.product = product;
         this.price = price;
-        this.explanation = explanation;
+        this.description = description;
     }
 
+    @Override
+    public String toString() {
+        return product + " | $" + price + " | " + description;
+    }
 
-    //    public void add() {
-//        this.index = menuItems.size();
-//        menuItems.add(new MenuItem(this.product, this.price, this.explanation));
-//    }
-
-//    public void printList() {
-//        for (int i = 0; i < menuItems.size(); i++) {
-//            System.out.print(menuItems.get(i));
-//        }
-//    }
+    public String getName() {
+        return product;
+    }
 
 }
