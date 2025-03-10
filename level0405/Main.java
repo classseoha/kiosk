@@ -1,8 +1,4 @@
-package level03;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+package level0405;
 
 public class Main {
 
@@ -13,5 +9,5 @@ public class Main {
         kiosk.start();
 
     }
-    
+
 }

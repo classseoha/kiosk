@@ -35,17 +35,19 @@ public class Kiosk {
             System.out.println();
             System.out.println("[ 버거도날드 메뉴 ]");
             System.out.println();
+
             int count = 1;
+
             for (MenuItem menu : menuItems) {
                 System.out.println(count + ". " + menu);
                 count++;
             }
+
             System.out.println("5. exit");
             System.out.println();
             System.out.print("번호를 선택해 주세요: ");
 
             try {
-
                 userNum = scan.nextInt();
 
             } catch (InputMismatchException e) {
