@@ -46,5 +46,4 @@ public class Order {
         System.out.println("모든 주문이 취소되었습니다.");
     }
 
-
 }

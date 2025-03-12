@@ -9,7 +9,6 @@ public class Kiosk {
     essential.level0405.Menu menu = new essential.level0405.Menu();
     Order order = new Order();
 
-
     public static int cartAdd(Scanner scan) {
         System.out.println();
         System.out.println("위 메뉴를 장바구니에 추가하시겠습니까?");
@@ -36,7 +35,6 @@ public class Kiosk {
         return cartNum;
     }
 
-
     public void start() {
 
         int userNum01 = 0;
@@ -53,11 +51,13 @@ public class Kiosk {
                 userNum01 = scan.nextInt();
 
             } catch (InputMismatchException e) {
+                System.out.println();
                 System.out.println("잘못 입력하셨습니다. 제대로 된 번호를 입력해 주세요.");
                 scan.nextLine();
                 continue;
 
             } catch (Exception e) {
+                System.out.println();
                 System.out.println("잘못 입력하셨습니다. 제대로 된 번호를 입력해 주세요.");
                 scan.nextLine();
                 continue;
@@ -66,10 +66,9 @@ public class Kiosk {
             switch (userNum01) {
 
                 case 1:
-
                     int userNum02 = 0;
-
                     boolean flag = true;
+
                     while (flag) {
 
                         System.out.println();
@@ -83,11 +82,13 @@ public class Kiosk {
                             userNum02 = scan.nextInt();
 
                         } catch (InputMismatchException e) {
+                            System.out.println();
                             System.out.println("잘못 입력하셨습니다. 제대로 된 번호를 입력해 주세요.");
                             scan.nextLine();
                             continue;
 
                         } catch (Exception e) {
+                            System.out.println();
                             System.out.println("잘못 입력하셨습니다. 제대로 된 번호를 입력해 주세요.");
                             scan.nextLine();
                             continue;
@@ -118,7 +119,6 @@ public class Kiosk {
                                         System.out.println();
                                         System.out.println("잘못 입력하셨습니다. 제대로 된 번호를 입력해 주세요.");
                                 }
-
                                 break;
 
                             case 2:
@@ -143,7 +143,6 @@ public class Kiosk {
                                         System.out.println();
                                         System.out.println("잘못 입력하셨습니다. 제대로 된 번호를 입력해 주세요.");
                                 }
-
                                 break;
 
                             case 3:
@@ -168,7 +167,6 @@ public class Kiosk {
                                         System.out.println();
                                         System.out.println("잘못 입력하셨습니다. 제대로 된 번호를 입력해 주세요.");
                                 }
-
                                 break;
 
                             case 4:
@@ -193,7 +191,6 @@ public class Kiosk {
                                         System.out.println();
                                         System.out.println("잘못 입력하셨습니다. 제대로 된 번호를 입력해 주세요.");
                                 }
-
                                 break;
 
                             case 5:
@@ -201,21 +198,23 @@ public class Kiosk {
                                 break;
 
                             default:
+                                System.out.println();
                                 System.out.println("잘못 입력하셨습니다. 제대로 된 번호를 입력해 주세요.");
                         }
 
                     }
 
                 case 2:
+                    System.out.println();
                     System.out.println("해당 서비스는 준비중 입니다. 다른 메뉴를 선택해 주세요.");
                     break;
 
                 case 3:
+                    System.out.println();
                     System.out.println("해당 서비스는 준비중 입니다. 다른 메뉴를 선택해 주세요.");
                     break;
 
                 case 4:
-//                    order.orderPrint();
                     if (order.orderPrint()) {
                         System.out.println();
                         System.out.println("1. 주문 \t2. 메뉴판");
@@ -241,6 +240,7 @@ public class Kiosk {
                         switch (lastChoice) {
 
                             case 1:
+                                System.out.println();
                                 System.out.println("주문이 완료되었습니다. 금액은 $" + order.getTotal() + " 입니다.");
                                 System.exit(0);
                                 break;
@@ -251,6 +251,7 @@ public class Kiosk {
                                 break;
 
                             default:
+                                System.out.println();
                                 System.out.println("잘못 입력하셨습니다. 제대로 된 번호를 입력해 주세요.");
 
                         }
@@ -268,6 +269,7 @@ public class Kiosk {
                     break;
 
                 default:
+                    System.out.println();
                     System.out.println("잘못 입력하셨습니다. 제대로 된 번호를 입력해 주세요.");
 
             }
