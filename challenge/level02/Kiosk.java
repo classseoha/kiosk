@@ -1,4 +1,4 @@
-package challenge.level01;
+package challenge.level02;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -241,7 +241,30 @@ public class Kiosk {
 
                             case 1:
                                 System.out.println();
-                                System.out.println("주문이 완료되었습니다. 금액은 $" + order.getTotal() + " 입니다.");
+                                System.out.println("할인 정보를 입력해 주세요.");
+                                System.out.println();
+                                System.out.println("1. 국가유공자 \n2. 군인 \n3. 학생 \n4. 해당없음");
+                                System.out.println();
+                                System.out.print("번호를 선택해 주세요: ");
+
+                                int discountChoice = 0;
+
+                                try {
+                                    discountChoice = scan.nextInt();
+
+                                } catch (InputMismatchException e) {
+                                    System.out.println();
+                                    System.out.println("잘못 입력하셨습니다. 제대로 된 번호를 입력해 주세요.");
+                                    scan.nextLine();
+
+                                } catch (Exception e) {
+                                    System.out.println();
+                                    System.out.println("잘못 입력하셨습니다. 제대로 된 번호를 입력해 주세요.");
+                                    scan.nextLine();
+                                }
+
+                                System.out.println();
+                                System.out.println("주문이 완료되었습니다. 금액은 $" + order.getTotal(discountChoice) + " 입니다.");
                                 System.exit(0);
                                 break;
 
@@ -255,6 +278,7 @@ public class Kiosk {
                                 System.out.println("잘못 입력하셨습니다. 제대로 된 번호를 입력해 주세요.");
 
                         }
+
                     }
                     break;
 
