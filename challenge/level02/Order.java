@@ -2,6 +2,8 @@ package challenge.level02;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Order {
 
@@ -61,7 +63,7 @@ public class Order {
 
             System.out.println();
             System.out.println("[ TOTAL ]");
-            System.out.println("$ " + this.total);
+            System.out.println("$ " + Math.round(this.total * 100) / 100.0);
 
             return true;
         }
@@ -71,6 +73,20 @@ public class Order {
         orders.clear();
         System.out.println();
         System.out.println("모든 주문이 취소되었습니다.");
+    }
+
+    public void menuCancel(String cancelMenu) {
+        if (cancelMenu.equals("치즈버거") || cancelMenu.equals("마늘버거") || cancelMenu.equals("햄햄버거") || cancelMenu.equals("치킨버거")) {
+            orders = orders.stream()
+                    .filter(menu -> !menu.getName().equals(cancelMenu))
+                    .collect(Collectors.toList());
+
+            System.out.println();
+            System.out.println(cancelMenu + "가 취소되었습니다.");
+        } else {
+            System.out.println();
+            System.out.println("잘못 입력하셨습니다.");
+        }
     }
 
 }

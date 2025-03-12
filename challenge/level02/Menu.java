@@ -2,6 +2,7 @@ package challenge.level02;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class Menu {
 
@@ -20,11 +21,8 @@ public class Menu {
     }
 
     public void menuPrint() {
-        int count = 1;
-        for (MenuItem menu : menuItems) {
-            System.out.println(count + ". " + menu);
-            count++;
-        }
+        IntStream.range(0, menuItems.size())
+                .forEach(i -> System.out.println((i + 1) + ". " + menuItems.get(i)));
     }
 
     public void userChoicePrint(int num) {

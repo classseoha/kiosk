@@ -203,6 +203,7 @@ public class Kiosk {
                         }
 
                     }
+                    break;
 
                 case 2:
                     System.out.println();
@@ -217,7 +218,7 @@ public class Kiosk {
                 case 4:
                     if (order.orderPrint()) {
                         System.out.println();
-                        System.out.println("1. 주문 \t2. 메뉴판");
+                        System.out.println("1. 주문하기 \t2. 주문수정 \t3. 돌아가기");
                         System.out.println();
                         System.out.print("번호를 선택해 주세요: ");
 
@@ -230,11 +231,13 @@ public class Kiosk {
                             System.out.println();
                             System.out.println("잘못 입력하셨습니다. 제대로 된 번호를 입력해 주세요.");
                             scan.nextLine();
+                            continue;
 
                         } catch (Exception e) {
                             System.out.println();
                             System.out.println("잘못 입력하셨습니다. 제대로 된 번호를 입력해 주세요.");
                             scan.nextLine();
+                            continue;
                         }
 
                         switch (lastChoice) {
@@ -256,11 +259,13 @@ public class Kiosk {
                                     System.out.println();
                                     System.out.println("잘못 입력하셨습니다. 제대로 된 번호를 입력해 주세요.");
                                     scan.nextLine();
+                                    continue;
 
                                 } catch (Exception e) {
                                     System.out.println();
                                     System.out.println("잘못 입력하셨습니다. 제대로 된 번호를 입력해 주세요.");
                                     scan.nextLine();
+                                    continue;
                                 }
 
                                 System.out.println();
@@ -269,6 +274,16 @@ public class Kiosk {
                                 break;
 
                             case 2:
+                                System.out.println();
+                                System.out.println("취소할 메뉴의 이름을 입력해 주세요: ");
+
+                                String cancelMenu = "";
+                                cancelMenu = scan.next();
+
+                                order.menuCancel(cancelMenu);
+                                break;
+
+                            case 3:
                                 flag = false;
                                 scan.nextLine();
                                 break;
@@ -276,6 +291,7 @@ public class Kiosk {
                             default:
                                 System.out.println();
                                 System.out.println("잘못 입력하셨습니다. 제대로 된 번호를 입력해 주세요.");
+                                continue;
 
                         }
 
