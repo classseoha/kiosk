@@ -1,4 +1,6 @@
-package level0405;
+package essential.level0405;
+
+import challenge.level01.Menu;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -6,7 +8,7 @@ import java.util.Scanner;
 public class Kiosk {
 
     Scanner scan = new Scanner(System.in);
-    Menu menu = new Menu();
+    challenge.level01.Menu menu = new Menu();
 
 
     public void start() {
