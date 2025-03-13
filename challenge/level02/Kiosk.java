@@ -3,13 +3,13 @@ package challenge.level02;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Kiosk {
+public class Kiosk { // 전반적인 입출력을 담당하는 메서드
 
     Scanner scan = new Scanner(System.in);
     Menu menu = new Menu();
     Order order = new Order();
 
-    public static int cartAdd(Scanner scan) {
+    public static int cartAdd(Scanner scan) { // 장바구니 추가 시 반복되는 코드 리팩토링
         System.out.println();
         System.out.println("위 메뉴를 장바구니에 추가하시겠습니까?");
         System.out.println();
@@ -35,7 +35,7 @@ public class Kiosk {
         return cartNum;
     }
 
-    public void start() {
+    public void start() { // main에 입력시 입출력 시작하게 하는 메서드
 
         int userNum01 = 0;
         while (true) {
@@ -47,7 +47,7 @@ public class Kiosk {
             System.out.println();
             System.out.print("번호를 선택해 주세요: ");
 
-            try {
+            try { // 숫자 이외의 값 입력 시 발생하는 오류 예외처리
                 userNum01 = scan.nextInt();
 
             } catch (InputMismatchException e) {
@@ -67,9 +67,9 @@ public class Kiosk {
 
                 case 1:
                     int userNum02 = 0;
-                    boolean flag = true;
+                    boolean flag = true; // 뒤로가기 실행을 위한 flag
 
-                    while (flag) {
+                    while (flag) { // flag가 false로 변환되면 실행 멈춤
 
                         System.out.println();
                         System.out.println("[ BURGER MENU ]");
@@ -78,7 +78,7 @@ public class Kiosk {
                         System.out.println();
                         System.out.print("번호를 선택해 주세요: ");
 
-                        try {
+                        try { // 숫자 이외의 값 입력 시 발생하는 오류 예외처리
                             userNum02 = scan.nextInt();
 
                         } catch (InputMismatchException e) {
@@ -98,12 +98,12 @@ public class Kiosk {
                         switch (userNum02) {
 
                             case 1:
-                                menu.userChoicePrint(1);
+                                menu.userChoicePrint(1); // 사용자가 선택한 메뉴 보여주는 메서드 호출
 
                                 cartNum = this.cartAdd(scan);
                                 switch (cartNum) {
                                     case 1:
-                                        order.orderAdd(userNum02);
+                                        order.orderAdd(userNum02); // 장바구니 리스트에 메뉴 추가하는 메서드 호출
                                         System.out.println();
                                         System.out.println("선택하신 메뉴가 장바구니에 추가되었습니다.");
                                         System.out.println();
@@ -194,7 +194,7 @@ public class Kiosk {
                                 break;
 
                             case 5:
-                                flag = false;
+                                flag = false; // 루프 탈출을 위한 false 변환
                                 break;
 
                             default:
@@ -205,7 +205,7 @@ public class Kiosk {
                     }
                     break;
 
-                case 2:
+                case 2: // 아직 추가 되지 않은 서비스에 대한 멘트 반환
                     System.out.println();
                     System.out.println("해당 서비스는 준비중 입니다. 다른 메뉴를 선택해 주세요.");
                     break;
@@ -224,7 +224,7 @@ public class Kiosk {
 
                         int lastChoice = 0;
 
-                        try {
+                        try { // 숫자 이외의 값 입력 시 발생하는 오류 예외처리
                             lastChoice = scan.nextInt();
 
                         } catch (InputMismatchException e) {
@@ -252,7 +252,7 @@ public class Kiosk {
 
                                 int discountChoice = 0;
 
-                                try {
+                                try { // 숫자 이외의 값 입력 시 발생하는 오류 예외처리
                                     discountChoice = scan.nextInt();
 
                                 } catch (InputMismatchException e) {
@@ -269,7 +269,7 @@ public class Kiosk {
                                 }
 
                                 System.out.println();
-                                System.out.println("주문이 완료되었습니다. 금액은 $" + order.getTotal(discountChoice) + " 입니다.");
+                                System.out.println("주문이 완료되었습니다. 금액은 $" + order.getTotal(discountChoice) + " 입니다."); // 할인 적용한 총액 반환하는 메서드 호출
                                 System.exit(0);
                                 break;
 
@@ -284,7 +284,7 @@ public class Kiosk {
                                 break;
 
                             case 3:
-                                flag = false;
+                                flag = false; // 루프 탈출을 위한 false 반환
                                 scan.nextLine();
                                 break;
 
