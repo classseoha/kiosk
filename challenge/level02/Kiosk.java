@@ -275,7 +275,7 @@ public class Kiosk { // 전반적인 입출력을 담당하는 메서드
 
                             case 2:
                                 System.out.println();
-                                System.out.println("취소할 메뉴의 이름을 입력해 주세요: ");
+                                System.out.print("취소할 메뉴의 이름을 입력해 주세요: ");
 
                                 String cancelMenu = "";
                                 cancelMenu = scan.next();

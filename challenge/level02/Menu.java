@@ -26,6 +26,7 @@ public class Menu { // MenuItem을 관리하는 클래스
     }
 
     public void userChoicePrint(int num) { // 사용자가 선택한 메뉴를 반환해주는 메서드
+        System.out.println();
         if (num == 1) {
             System.out.println("선택한 메뉴: " + menuItems.get(0));
         } else if (num == 2) {
